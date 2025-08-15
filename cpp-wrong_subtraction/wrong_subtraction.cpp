@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 class Utility
 {
@@ -21,18 +22,22 @@ int main()
     std::cin >> n;
     std::cin >> k;
 
-    for (int i = 0; i < k; i++)
+    if (2 <= n <= pow(10, 9) && 1 <= k <= 50)
     {
-        int last_digit = utility.getNumLastDigit(n);
-        if (last_digit == 0)
+
+        for (int i = 0; i < k; i++)
         {
-            n = n / 10;
-        }
-        else
-        {
-            n = n - 1;
-        }
-    };
+            int last_digit = utility.getNumLastDigit(n);
+            if (last_digit == 0)
+            {
+                n = n / 10;
+            }
+            else
+            {
+                n = n - 1;
+            }
+        };
+    }
 
     std::cout << n << std::endl;
     return 0;
